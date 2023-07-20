@@ -1,6 +1,5 @@
 def dijkstra(edges, start_node, target_node):
 
-
     nodes = set(x[0] for x in edges)
     distances = {x[0]: float('inf') for x in edges}
     previous_nodes = {x[0]: None for x in edges}
@@ -16,7 +15,6 @@ def dijkstra(edges, start_node, target_node):
         if distances[current_node] == float('inf'):
             break
 
-
         neighbours = get_all_neighbours(current_node, edges)
 
         for (neighbour, cost) in neighbours:
@@ -29,7 +27,6 @@ def dijkstra(edges, start_node, target_node):
         if target_node == current_node:
             break
 
-
     solution = [target_node]
     temp = target_node
     while previous_nodes[temp] is not None:
@@ -38,7 +35,6 @@ def dijkstra(edges, start_node, target_node):
     solution.reverse()
 
     return animation_order, solution
-
 
 
 def get_all_neighbours(node, edges):

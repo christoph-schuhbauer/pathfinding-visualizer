@@ -1,5 +1,3 @@
-import queue
-
 
 def breadth_first_search(edges, start, target):
 
