@@ -167,7 +167,6 @@ function visualize(){
 
 
 // sending function
-
 function sending(url, graph){
 
     const requestOptions = {
