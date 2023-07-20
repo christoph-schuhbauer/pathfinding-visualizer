@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script type="text/javascript" src="/static/js/script.js" defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Pathfinding Visualization</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <button class="btn btn-outline-success me-2" type="button" onclick="visualize()">Visualize</button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-success me-2" type="button" onclick="reset()">Reset</button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-success me-2" type="button" onclick="reset_visualization()">reset visualization</button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-success me-2" type="button" onclick="do_maze2()">do maze</button>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="algo_text">
+                        Choose Algorithm
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li><button class="dropdown-item" id="dijkstra" type="button" onclick="change_dropdown_text('Dijkstras Algorithm')">Dijkstras Algorithm</button></li>
+                        <li><button class="dropdown-item" id="a_star" type="button" onclick="change_dropdown_text('A* Algorithm')">A* Algorithm</button></li>
+                        <li><button class="dropdown-item" id="breadth_first_search" type="button" onclick="change_dropdown_text('Breadth First Search')">Breadth First Search</button></li>
+                        <li><button class="dropdown-item" type="button">sth else</button></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="bi bi-stopwatch"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="timer">0 milliseconds</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="bi bi-flag"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="distance">0 length units</a>
+                </li>
+
+              </ul>
+              <a class="nav-item" href="https://icons.getbootstrap.com/icons/github/"><i class="bi bi-github" style="font-size: 1.5rem; color: #198754; margin-right: 10px;" ></i></a>
+            </div>
+          </div>
+        </nav>
+
+        <div>
+            <table id="data_table" class="data_table">
+                <tr>
+                    <th>Time in ms</th>
+                    <th>Distance in LU</th>
+                    <th>visited tiles</th>
+                </tr>
+            </table>
+
+        </div>
+
+
+        <div id="board"></div>
+
+    </body>
+
+
+</html>
